@@ -9,11 +9,11 @@
 	<body>
 		<form method="POST" name="formInsc">
 			Nom: <br/> <input type="text" name="nom" value="Nom" /><br/>
-			Prénom: <br/> <input type="text" name="prenom" value="Prenom" /><br/>
+			PrÃ©nom: <br/> <input type="text" name="prenom" value="Prenom" /><br/>
 			Ville: <br/> <input type="text" name="ville" value="Ville" /><br/>
 			mail: <br/><input type="mail" name="mail" value="Mail" /><br/>	
-			Bac préparé: <br/><select name = "bac">
-					<option selected>-- Sélectionnez une filière --</option>
+			Bac prÃ©parÃ©: <br/><select name = "bac">
+					<option selected>-- SÃ©lectionnez une filiÃ©re --</option>
 					<option> S </option>
 					<option> STI </option>
 					<option> ES </option>
