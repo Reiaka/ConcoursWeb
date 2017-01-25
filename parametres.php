@@ -1,5 +1,5 @@
 <?php
-	$host = "192.168.0.146";
+	$host = "localhost";
 	$pseudo = "root";
 	$password = "noob";
 	$bd = "concours";
