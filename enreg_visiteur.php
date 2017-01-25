@@ -1,8 +1,5 @@
 <?php
 	
-	$serveur = "localhost";
-	$login = "root";
-	$mdp = "noob";
 
 	if(isset($_POST['nom'], $_POST['prenom'], $_POST['ville'], $_POST['mail'], $_POST['bac'], $_POST['tabEvts']))
 	{	
@@ -60,20 +57,27 @@
 			$message.="<html>\n <h1>Bonjour ".$fname." ".$lname.",</h1>\n Ce mail confirme votre inscription pour les évènements suivants:\n";
 			
 			$tables="event";
+			$cpt = 0;
 			
 			foreach($tabEvts as $titreEvt)
 			{
+				
 				$requete="SELECT * FROM $tables WHERE titre = '$titreEvt'";
 				
 				$resultat=mysqli_query($connexion,$requete);
 				
 				if (mysqli_num_rows($resultat) < 1)
 				{
-					$message.=
+					$message.= $resultat["titre"][$cpt]." : de ".$resultat["heureDebut"][$cpt]." jusqu'à ".$resultat["heureFin"][$cpt]." lieu : ".$resultat["lieu"][$cpt]." \n";
 				}
+				$cpt++;
 			}
 			
+			$message.= " Merci pour votre inscription";
 			
+			$message.=" \n </html>";
+			
+			$mail = mail($destination,$object,$message);
 			
 		}
 		
